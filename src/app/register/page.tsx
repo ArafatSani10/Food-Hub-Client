@@ -124,15 +124,15 @@ export default function RegisterPage() {
   return (
     <div className='min-h-screen flex items-center justify-center bg-gray-50 pt-32 pb-20 px-4 relative overflow-hidden'>
       {/* Decorative Circles */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2 animate-float"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2 animate-float" style={{ animationDelay: '2s' }}></div>
 
       {isLoading && <FullPageLoader message='Assembling your profile...' transparent />}
       
       <div className='w-full max-w-xl relative z-10'>
-        <Card className='border-none shadow-2xl shadow-gray-200/50 rounded-[2.5rem] bg-white overflow-hidden'>
+        <Card className='border-none shadow-2xl shadow-gray-200/50 rounded-[40px] bg-white overflow-hidden hover-lift transition-all duration-300'>
           <div className="bg-gray-950 p-10 text-white text-center relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/20 blur-3xl"></div>
+             <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/20 blur-3xl animate-glow"></div>
              <CardTitle className='text-3xl font-black italic tracking-tighter mb-2'>Join Food<span className="text-orange-500">Hub</span></CardTitle>
              <CardDescription className='text-gray-400 font-medium'>Create an account to start your culinary journey</CardDescription>
           </div>
@@ -142,7 +142,7 @@ export default function RegisterPage() {
               <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Role</label>
               <select
                 {...register('role')}
-                className="w-full h-12 rounded-xl border border-gray-100 bg-gray-50 px-4 text-sm font-medium outline-none focus:border-orange-500"
+                className="w-full h-12 rounded-2xl border border-gray-100 bg-gray-50 px-4 text-sm font-medium outline-none focus:border-orange-500"
               >
                 <option value="CUSTOMER">Customer</option>
                 <option value="PROVIDER">Provider</option>
@@ -157,7 +157,7 @@ export default function RegisterPage() {
                    <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300" size={18} />
                    <Input 
                     placeholder='Full Name' 
-                    className="h-12 pl-12 rounded-xl border-gray-100 bg-gray-50 focus:bg-white transition-all font-medium"
+                    className="h-12 pl-12 rounded-2xl border-gray-100 bg-gray-50 focus:bg-white transition-all font-medium"
                     {...register('name')} 
                    />
                 </div>
@@ -168,7 +168,7 @@ export default function RegisterPage() {
                    <Input 
                     type="email"
                     placeholder='Email Address' 
-                    className="h-12 pl-12 rounded-xl border-gray-100 bg-gray-50 focus:bg-white transition-all font-medium"
+                    className="h-12 pl-12 rounded-2xl border-gray-100 bg-gray-50 focus:bg-white transition-all font-medium"
                     {...register('email')} 
                    />
                 </div>
@@ -179,7 +179,7 @@ export default function RegisterPage() {
                    <Input 
                     type={showPassword ? 'text' : 'password'}
                     placeholder='Password' 
-                    className="h-12 pl-12 pr-12 rounded-xl border-gray-100 bg-gray-50 focus:bg-white transition-all font-medium"
+                    className="h-12 pl-12 pr-12 rounded-2xl border-gray-100 bg-gray-50 focus:bg-white transition-all font-medium"
                     {...register('password')} 
                    />
                    <button
@@ -200,21 +200,21 @@ export default function RegisterPage() {
                     </div>
                     <div className="relative">
                        <Building className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300" size={18} />
-                       <Input placeholder='Shop/Kitchen Name' className="h-12 pl-12 rounded-xl border-gray-100 bg-gray-50" {...register('shopName')} />
+                       <Input placeholder='Shop/Kitchen Name' className="h-12 pl-12 rounded-2xl border-gray-100 bg-gray-50" {...register('shopName')} />
                     </div>
                     <div className="relative">
                        <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300" size={18} />
-                       <Input placeholder='Operational Address' className="h-12 pl-12 rounded-xl border-gray-100 bg-gray-50" {...register('address')} />
+                       <Input placeholder='Operational Address' className="h-12 pl-12 rounded-2xl border-gray-100 bg-gray-50" {...register('address')} />
                     </div>
                     <div className="relative">
                        <Utensils className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300" size={18} />
-                       <Input placeholder='Cuisine Specialties' className="h-12 pl-12 rounded-xl border-gray-100 bg-gray-50" {...register('cuisine')} />
+                       <Input placeholder='Cuisine Specialties' className="h-12 pl-12 rounded-2xl border-gray-100 bg-gray-50" {...register('cuisine')} />
                     </div>
                   </div>
                 )}
               </div>
 
-              <Button type='submit' className='w-full h-12 rounded-xl bg-orange-500 hover:bg-orange-600 font-bold text-white shadow-lg shadow-orange-500/20 transition-all active:scale-95 group'>
+              <Button type='submit' className='w-full h-12 rounded-2xl bg-orange-500 hover:bg-orange-600 font-bold text-white shadow-lg shadow-orange-500/20 transition-all active:scale-95 group hover-lift'>
                 Create Account <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </form>
@@ -231,7 +231,7 @@ export default function RegisterPage() {
             <Button
               type='button'
               variant='outline'
-              className='w-full h-12 rounded-xl border-gray-100 bg-gray-50 hover:bg-white font-bold flex gap-3 text-sm'
+              className='w-full h-12 rounded-2xl border-gray-100 bg-gray-50 hover:bg-white font-bold flex gap-3 text-sm hover-lift transition-all'
               onClick={() => {
                 window.location.href = getGoogleAuthUrl({ role: selectedRole });
               }}

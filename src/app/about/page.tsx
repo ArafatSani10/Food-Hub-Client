@@ -24,7 +24,7 @@ export default function AboutPage() {
               </p>
               <div className="flex gap-4">
                  <Link href="/meals">
-                   <Button className="h-12 px-8 rounded-xl bg-gray-950 text-white font-bold group">
+                   <Button className="soft-button text-sm font-semibold group">
                       Explore our Vision <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
                    </Button>
                  </Link>

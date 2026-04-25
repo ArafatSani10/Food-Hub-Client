@@ -131,16 +131,16 @@ export default function LoginPage() {
   return (
     <div className='min-h-screen flex items-center justify-center px-4 bg-gray-50 pt-20 relative overflow-hidden'>
       {/* Decorative background elements */}
-      <div className='absolute top-0 right-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full translate-x-1/3'></div>
-      <div className='absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full -translate-x-1/4'></div>
+      <div className='absolute top-0 right-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full translate-x-1/3 animate-float'></div>
+      <div className='absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full -translate-x-1/4 animate-float' style={{ animationDelay: '2s' }}></div>
 
       {isLoading && <FullPageLoader message='Securing access...' transparent />}
       
       <div className='w-full max-w-lg relative z-10'>
-        <Card className='border-none shadow-2xl shadow-gray-200/50 rounded-[2rem] bg-white overflow-hidden'>
+        <Card className='border-none shadow-2xl shadow-gray-200/50 rounded-[40px] bg-white overflow-hidden hover-lift transition-all duration-300'>
           <div className="bg-gray-950 p-8 text-white text-center relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/20 blur-3xl"></div>
-             <div className="mx-auto w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center text-white shadow-lg mb-4">
+             <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/20 blur-3xl animate-glow"></div>
+             <div className="mx-auto w-12 h-12 bg-orange-500 rounded-2xl flex items-center justify-center text-white shadow-lg mb-4 animate-float">
                <ShieldCheck size={24} />
              </div>
              <CardTitle className='text-2xl font-black italic tracking-tight mb-1'>Welcome Back</CardTitle>
@@ -155,7 +155,7 @@ export default function LoginPage() {
                    <Input
                     type='email'
                     placeholder='Email Address'
-                    className='h-12 pl-12 rounded-xl border-gray-100 bg-gray-50 focus:bg-white transition-all font-medium'
+                    className='h-12 pl-12 rounded-2xl border-gray-100 bg-gray-50 focus:bg-white transition-all font-medium'
                     {...register('email')}
                    />
                 </div>
@@ -166,7 +166,7 @@ export default function LoginPage() {
                    <Input
                     type={showPassword ? 'text' : 'password'}
                     placeholder='Password'
-                    className='h-12 pl-12 pr-12 rounded-xl border-gray-100 bg-gray-50 focus:bg-white transition-all font-medium'
+                    className='h-12 pl-12 pr-12 rounded-2xl border-gray-100 bg-gray-50 focus:bg-white transition-all font-medium'
                     {...register('password')}
                    />
                    <button
@@ -184,7 +184,7 @@ export default function LoginPage() {
                  <Link href="/contact" className="text-xs font-bold text-orange-500 hover:underline">Need password help?</Link>
               </div>
 
-              <Button type='submit' className='w-full h-12 rounded-xl bg-orange-500 hover:bg-orange-600 font-bold text-white shadow-lg transition-all active:scale-95 group'>
+              <Button type='submit' className='w-full h-12 rounded-2xl bg-orange-500 hover:bg-orange-600 font-bold text-white shadow-lg transition-all active:scale-95 group hover-lift'>
                 Sign In <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </form>
@@ -198,14 +198,14 @@ export default function LoginPage() {
                 {DEMO_ACCOUNTS.map((acc) => (
                   <div
                     key={acc.email}
-                    className='rounded-xl border border-gray-100 bg-gray-50 p-2 flex flex-col gap-1.5'
+                    className='rounded-2xl border border-gray-100 bg-gray-50 p-2 flex flex-col gap-1.5'
                   >
                     <Button
                       type='button'
                       variant='outline'
                       disabled={isLoading}
                       onClick={() => loginAsDemo(acc)}
-                      className='h-10 rounded-lg border-gray-200 bg-white hover:bg-orange-50 font-black text-[10px] uppercase tracking-tight w-full'
+                      className='h-10 rounded-xl border-gray-200 bg-white hover:bg-orange-50 font-black text-[10px] uppercase tracking-tight w-full'
                     >
                       <span className='flex items-center justify-center gap-1.5'>
                         {demoIcon(acc.role)}
@@ -235,7 +235,7 @@ export default function LoginPage() {
 
             <Button
               variant='outline'
-              className='w-full h-11 rounded-xl border-gray-100 bg-gray-50 hover:bg-white font-bold flex gap-3 text-sm'
+              className='w-full h-11 rounded-2xl border-gray-100 bg-gray-50 hover:bg-white font-bold flex gap-3 text-sm hover-lift transition-all'
               type='button'
               onClick={() => {
                 window.location.href = getGoogleAuthUrl();

@@ -153,17 +153,17 @@ export default function HomePage() {
 
             {/* Right Visuals */}
             <div className='relative hidden lg:block' data-aos="fade-left">
-              <div className="relative z-10 w-full h-[700px] flex items-center justify-center">
-                <div className="absolute inset-0 bg-linear-to-b from-orange-500/10 to-transparent rounded-[100px] transform rotate-3"></div>
+              <div className="relative z-10 w-full h-175 flex items-center justify-center">
+                <div className="absolute inset-0 bg-linear-to-b from-orange-500/10 to-transparent rounded-[40px] transform rotate-3"></div>
                 <div className="relative animate-float">
                   <Image
                     src={homeContent?.hero?.image || "/pizza.avif"}
                     width={600}
                     height={600}
                     alt="Pizza Hero"
-                    className="rounded-[60px] shadow-[0_50px_100px_rgba(0,0,0,0.1)] object-cover h-[500px] w-[500px]"
+                    className="rounded-[36px] shadow-[0_50px_80px_rgba(15,23,42,0.12)] object-cover h-[500px] w-[500px]"
                   />
-                  <div className="absolute top-10 -right-12 bg-white p-6 rounded-[32px] shadow-3xl border border-gray-50">
+                  <div className="absolute top-10 -right-12 bg-white p-6 rounded-[28px] shadow-2xl border border-gray-50">
                     <div className="flex items-center gap-3">
                       <div className="h-10 w-10 bg-green-500 rounded-xl flex items-center justify-center text-white"><ShieldCheck size={20} /></div>
                       <div>
@@ -172,7 +172,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div className="absolute -bottom-10 -left-12 bg-gray-950 p-6 rounded-[32px] shadow-3xl text-white">
+                  <div className="absolute -bottom-10 -left-12 bg-gray-950 p-6 rounded-[28px] shadow-2xl text-white">
                     <div className="flex items-center gap-4">
                       <div className="h-12 w-12 bg-orange-500 rounded-xl flex items-center justify-center text-white font-black">{homeContent?.hero?.trustScore || 4.8}</div>
                       <div>
@@ -209,13 +209,13 @@ export default function HomePage() {
           <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10'>
             {isLoading ? (
               Array.from({ length: 6 }).map((_, i) => (
-                <div key={i} className='h-48 bg-white rounded-[40px] animate-pulse shadow-sm'></div>
+                <div key={i} className='h-48 bg-white rounded-3xl animate-pulse shadow-sm'></div>
               ))
             ) : categories.map((cat, i) => (
               <Link
                 key={cat.id}
                 href={`/meals?categoryId=${cat.id}`}
-                className='group bg-white p-6 rounded-2xl border border-gray-100 hover:border-orange-500/30 hover:shadow-xl transition-all duration-300 text-left flex flex-col justify-between min-h-[180px]'
+                className='group section-card p-6 hover:border-orange-500/30 hover:shadow-xl text-left flex flex-col justify-between min-h-[180px]'
                 data-aos="fade-up"
                 data-aos-delay={i * 100}
               >
@@ -290,7 +290,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {isLoading && featuredMeals.length === 0
               ? Array.from({ length: 4 }).map((_, i) => (
-                <div key={i} className='h-[450px] bg-white rounded-[48px] animate-pulse shadow-sm'></div>
+                <div key={i} className='h-[450px] bg-white rounded-[32px] animate-pulse shadow-sm'></div>
               ))
               : featuredMeals.map((meal, i) => (
                 <div key={meal.id} data-aos="fade-up" data-aos-delay={i * 150}>
@@ -306,13 +306,13 @@ export default function HomePage() {
         <div className='container mx-auto px-4'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-24 items-center'>
             <div className='relative group' data-aos="fade-right">
-              <div className="absolute inset-0 bg-orange-500/20 rounded-[60px] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute inset-0 bg-orange-500/20 rounded-[40px] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <img
                 src={homeContent?.story?.image || "/shop.jpeg"}
-                className='rounded-[60px] shadow-3xl relative z-10 transition-all duration-1000 group-hover:scale-[1.02]'
+                className='rounded-[36px] shadow-2xl relative z-10 transition-all duration-1000 group-hover:scale-[1.02]'
                 alt='Brand Story'
               />
-              <div className="absolute -bottom-10 -right-10 bg-white p-10 rounded-[48px] shadow-3xl z-20 border border-gray-50 hidden md:block">
+              <div className="absolute -bottom-10 -right-10 bg-white p-10 rounded-[32px] shadow-2xl z-20 border border-gray-50 hidden md:block">
                 <p className="text-5xl font-black text-orange-500 mb-1">{homeContent?.story?.yearsOfTrust || 12}+</p>
                 <p className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Years of Trust</p>
               </div>
@@ -440,7 +440,7 @@ export default function HomePage() {
       <FAQ />
 
       <section className="pb-32 container mx-auto px-4" data-aos="zoom-in">
-        <div className="bg-gray-50 rounded-[60px] p-12 md:p-24 relative overflow-hidden text-center border border-gray-100">
+        <div className="bg-gray-50 rounded-[40px] p-12 md:p-24 relative overflow-hidden text-center border border-gray-100">
           <div className="relative z-10 max-w-3xl mx-auto space-y-10">
             <div className="inline-flex items-center gap-3 bg-white px-5 py-2 rounded-2xl border border-gray-100 shadow-sm mb-4">
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-orange-500">Subscribe</span>
