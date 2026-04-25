@@ -34,13 +34,15 @@ export default function BlogPage() {
     <div className="flex flex-col">
       {/* Blog Hero */}
       <section className="bg-orange-500 py-32 text-center text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 blur-[120px] rounded-full translate-x-1/3 -translate-y-1/3 animate-float"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 blur-[120px] rounded-full -translate-x-1/4 translate-y-1/4 animate-float" style={{ animationDelay: '2s' }}></div>
         <div className="container mx-auto px-4 relative z-10">
           <p className="text-[10px] font-black uppercase tracking-[0.4em] mb-4 opacity-80">Culinary Stories</p>
           <h1 className="text-5xl md:text-7xl font-black mb-10 leading-tight">Flavor & <span className="text-gray-900 italic">Flair</span></h1>
           <div className="max-w-xl mx-auto relative group">
             <Input
               placeholder="Search articles..."
-              className="h-16 pl-8 pr-16 rounded-2xl border-none bg-white text-gray-900 font-bold placeholder:text-gray-400 shadow-2xl"
+              className="h-16 pl-8 pr-16 rounded-[32px] border-none bg-white text-gray-900 font-bold placeholder:text-gray-400 shadow-2xl"
             />
             <Button className="absolute right-2 top-2 bottom-2 bg-orange-500 hover:bg-orange-600 rounded-xl px-4">
               <Search size={20} />

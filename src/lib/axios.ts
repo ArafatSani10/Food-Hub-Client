@@ -3,7 +3,7 @@ import axios from 'axios';
 const api = axios.create({
   baseURL:
     process.env.NEXT_PUBLIC_API_URL ||
-    'https://foodhub-backend-api.vercel.app/api',
+    'https://food-hub-client-phi.vercel.app/api',
   withCredentials: true,
   timeout: 30000, // 30 second timeout - increased for better reliability
   // Don't force Content-Type globally; it breaks FormData uploads.
