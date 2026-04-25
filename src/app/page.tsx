@@ -104,25 +104,25 @@ export default function HomePage() {
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 items-center'>
             {/* Left Content */}
             <div className='space-y-12' data-aos="fade-right">
-              <div className="inline-flex items-center gap-3 bg-orange-50 px-5 py-2 rounded-2xl border border-orange-100/50 shadow-sm">
+              <div className="section-highlight shadow-lg">
                 <Zap size={16} className="text-orange-600 fill-orange-600" />
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-orange-600">The Ultimate Choice for Foodies</span>
+                <span className="text-[10px] font-black uppercase text-orange-600">The Ultimate Choice for Foodies</span>
               </div>
 
               <div className='space-y-4'>
-                <h1 className='text-3xl md:text-6xl font-black text-gray-950 leading-tight tracking-tight'>
+                <h1 className='text-4xl md:text-6xl font-extrabold text-gray-950 leading-tight'>
                   Satisfy Your <br />
                   <span className="text-orange-500 italic">Cravings</span> In <br />
                   Real Time.
                 </h1>
-                <p className='text-gray-500 text-sm md:text-lg font-medium leading-relaxed max-w-xl'>
+                <p className='text-gray-500 text-base md:text-lg font-medium leading-relaxed max-w-xl'>
                   Experience a culinary revolution with FoodHub. Fresh, chef-prepared meals delivered with precision to your doorstep.
                 </p>
               </div>
 
               <div className='flex flex-row items-center gap-4'>
                 <Link href='/meals'>
-                  <Button className='h-12 px-6 rounded-xl text-md font-medium bg-gray-950 hover:bg-orange-500 shadow-lg transition-all active:scale-95 group'>
+                  <Button className='soft-button text-sm font-semibold group'>
                     Explore Menu
                     <ArrowRight className='ml-2 group-hover:translate-x-1 transition-transform' />
                   </Button>

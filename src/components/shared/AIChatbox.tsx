@@ -13,7 +13,7 @@ interface Message {
   timestamp: Date;
 }
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080/api";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
 
 export function AIChatbox() {
   const [isOpen, setIsOpen] = useState(false);
@@ -90,7 +90,7 @@ export function AIChatbox() {
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            className="mb-6 w-[325px] h-[500px] bg-white rounded-[2.5rem] shadow-4xl border border-gray-100 flex flex-col overflow-hidden relative"
+            className="mb-6 w-81.25 h-125 bg-white rounded-[2.5rem] shadow-4xl border border-gray-100 flex flex-col overflow-hidden relative"
           >
             {/* Header */}
             <div className="p-6 bg-gray-950 text-white flex items-center justify-between">

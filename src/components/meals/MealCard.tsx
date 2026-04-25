@@ -26,7 +26,7 @@ export function MealCard({ meal }: MealCardProps) {
 
   return (
     <div className='group relative'>
-      <Card className='h-full overflow-hidden border border-gray-100 shadow-xl shadow-gray-200/40 hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-500 bg-white rounded-[32px] flex flex-col'>
+      <Card className='h-full overflow-hidden border border-gray-100 shadow-[0_24px_80px_-34px_rgba(15,23,42,0.18)] hover:shadow-[0_32px_90px_-34px_rgba(255,94,31,0.22)] transition-all duration-500 bg-white rounded-[34px] flex flex-col'>
         {/* Image Section */}
         <div className='relative h-60 shrink-0 overflow-hidden'>
           <Image
@@ -85,7 +85,7 @@ export function MealCard({ meal }: MealCardProps) {
 
           <div className='pt-2'>
             <Button
-              className='w-full h-11 rounded-xl font-bold text-sm bg-gray-950 hover:bg-orange-600 text-white transition-all shadow-md gap-2'
+              className='w-full h-12 rounded-full font-bold text-sm bg-orange-500 hover:bg-orange-600 text-white transition-all shadow-xl gap-2'
               onClick={handleAddToCart}
             >
               <ShoppingBag size={16} />

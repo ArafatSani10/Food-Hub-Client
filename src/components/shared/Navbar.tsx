@@ -104,18 +104,18 @@ export function Navbar() {
     <nav className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out",
       isScrolled
-        ? "py-2 px-6 md:px-10"
+        ? "py-2 px-4 md:px-10"
         : "py-3 px-4"
     )}>
       <div className={cn(
-        "container mx-auto max-w-7xl transition-all duration-300 rounded-2xl flex items-center justify-between px-6 py-3 border border-transparent",
+        "container mx-auto max-w-7xl transition-all duration-300 rounded-full flex items-center justify-between px-6 py-3 border border-white/10 shadow-[0_28px_70px_-40px_rgba(15,23,42,0.18)]",
         isScrolled
-          ? "bg-white/90 backdrop-blur-xl shadow-lg border-white/20"
-          : "bg-white border-gray-100 shadow-sm"
+          ? "bg-white/90 backdrop-blur-xl border-white/20"
+          : "bg-white/95"
       )}>
         {/* Logo */}
-        <Link href="/" className="flex items-center group">
-          <div className="relative h-14 w-14 rounded-xl overflow-hidden shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform duration-300">
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative h-12 w-12 rounded-3xl overflow-hidden shadow-xl shadow-orange-500/20 group-hover:scale-105 transition-transform duration-300">
             <Image 
               src="/logo.png" 
               alt="FoodHub Logo" 
@@ -123,7 +123,7 @@ export function Navbar() {
               className="object-cover"
             />
           </div>
-          <span className="text-xl font-bold text-gray-900 tracking-tight hidden sm:block">
+          <span className="text-2xl font-black text-gray-950 hidden sm:block leading-none">
             Food<span className="text-orange-500">Hub</span>
           </span>
         </Link>
@@ -144,7 +144,7 @@ export function Navbar() {
                   <Button
                     variant="ghost"
                     className={cn(
-                      "px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2",
+                      "px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2",
                       isActive ? "text-orange-500 bg-orange-50" : "text-gray-600 hover:text-gray-950 hover:bg-gray-50"
                     )}
                   >

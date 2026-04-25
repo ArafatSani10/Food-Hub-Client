@@ -48,44 +48,44 @@
 
 :root {
   --radius: 0.75rem;
-  --background: #FFFFFF;
-  --foreground: #0A0A0A;
+  --background: #FBFBFD;
+  --foreground: #08101D;
   --card: #FFFFFF;
-  --card-foreground: #0A0A0A;
+  --card-foreground: #08101D;
   --popover: #FFFFFF;
-  --popover-foreground: #0A0A0A;
-  --primary: #FF5200;
+  --popover-foreground: #08101D;
+  --primary: #FF5E1F;
   --primary-foreground: #FFFFFF;
-  --secondary: #F8F9FA;
-  --secondary-foreground: #1A1A1A;
-  --muted: #F8F9FA;
-  --muted-foreground: #666666;
-  --accent: #FFF4F0;
-  --accent-foreground: #FF5200;
+  --secondary: #F8FAFC;
+  --secondary-foreground: #1F2937;
+  --muted: #F4F6F9;
+  --muted-foreground: #6B7280;
+  --accent: #FFF2ED;
+  --accent-foreground: #FF5E1F;
   --destructive: #EF4444;
   --border: #E5E7EB;
-  --input: #E5E7EB;
-  --ring: rgba(255, 82, 0, 0.4);
+  --input: #EEF2FF;
+  --ring: rgba(255, 94, 31, 0.45);
 }
 
 .dark {
-  --background: #0A0A0A;
-  --foreground: #F8F9FA;
-  --card: #141414;
-  --card-foreground: #F8F9FA;
-  --popover: #141414;
-  --popover-foreground: #F8F9FA;
-  --primary: #FF5200;
+  --background: #0B1220;
+  --foreground: #F8FAFC;
+  --card: #111827;
+  --card-foreground: #F8FAFC;
+  --popover: #111827;
+  --popover-foreground: #F8FAFC;
+  --primary: #FF5E1F;
   --primary-foreground: #FFFFFF;
-  --secondary: #1A1A1A;
-  --secondary-foreground: #F8F9FA;
-  --muted: #1A1A1A;
-  --muted-foreground: #A1A1AA;
-  --accent: #261611;
-  --accent-foreground: #FF5200;
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.1);
-  --ring: #FF5200;
+  --secondary: #1F2937;
+  --secondary-foreground: #F8FAFC;
+  --muted: #1F2937;
+  --muted-foreground: #A5B4FC;
+  --accent: #2B2A40;
+  --accent-foreground: #FF5E1F;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #FF5E1F;
 }
 
 @layer base {
@@ -94,14 +94,24 @@
   }
 
   body {
-    @apply bg-background text-foreground selection:bg-orange-500 selection:text-white transition-colors duration-300;
+    @apply bg-background text-foreground selection:bg-orange-500 selection:text-white transition-colors duration-300 antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    background-image: radial-gradient(circle at top left, rgba(255, 94, 31, 0.12), transparent 24%), radial-gradient(circle at bottom right, rgba(255, 94, 31, 0.08), transparent 30%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/70 backdrop-blur-3xl border border-white/20;
+    @apply bg-white/75 backdrop-blur-3xl border border-white/20;
   }
 
   .glass-dark {
@@ -109,20 +119,40 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-linear-to-r from-orange-500 via-[#FF7A00] to-[#FF9F00];
+    @apply bg-clip-text text-transparent bg-linear-to-r from-orange-500 via-[#FF7A00] to-[#FFB56A];
   }
 
   .premium-shadow {
-    box-shadow: 0 12px 24px -12px rgba(255, 82, 0, 0.12), 0 8px 18px -14px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 60px -24px rgba(15, 23, 42, 0.2), 0 10px 35px -24px rgba(255, 94, 31, 0.16);
   }
 
   .premium-card {
-    @apply bg-white rounded-2xl border border-gray-100 hover:border-orange-500/20 transition-all duration-500 ease-out;
+    @apply bg-white rounded-[2rem] border border-gray-200/80 hover:border-orange-500/20 transition-all duration-500 ease-out;
   }
 
   .premium-card:hover {
     @apply -translate-y-0.5;
-    box-shadow: 0 16px 30px -20px rgba(255, 82, 0, 0.15);
+    box-shadow: 0 22px 60px -28px rgba(255, 94, 31, 0.2);
+  }
+
+  .surface-panel {
+    @apply rounded-[2rem] border border-gray-200/70 bg-white/95 shadow-[0_26px_80px_-28px_rgba(15,23,42,0.18)] backdrop-blur-xl;
+  }
+
+  .hero-glow {
+    @apply absolute inset-0 opacity-70;
+  }
+
+  .section-highlight {
+    @apply inline-flex items-center gap-2 rounded-full bg-orange-50 px-4 py-2 text-xs font-bold text-orange-600;
+  }
+
+  .soft-button {
+    @apply rounded-full bg-orange-500 text-white px-6 py-3 shadow-xl shadow-orange-500/20 hover:bg-orange-600 transition-all duration-300;
+  }
+
+  .text-soft-muted {
+    color: #6B7280;
   }
 
   .reveal-on-scroll {
